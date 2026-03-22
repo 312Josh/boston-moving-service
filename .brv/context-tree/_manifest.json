@@ -3,35 +3,83 @@
     {
       "order": 3,
       "path": "_index.md",
-      "tokens": 199,
+      "tokens": 597,
+      "type": "summary"
+    },
+    {
+      "order": 2,
+      "path": "development/_index.md",
+      "tokens": 417,
       "type": "summary"
     },
     {
       "order": 2,
       "path": "infrastructure/_index.md",
-      "tokens": 191,
+      "tokens": 174,
+      "type": "summary"
+    },
+    {
+      "order": 1,
+      "path": "development/build_system/_index.md",
+      "tokens": 143,
+      "type": "summary"
+    },
+    {
+      "order": 1,
+      "path": "development/configuration/_index.md",
+      "tokens": 240,
       "type": "summary"
     },
     {
       "order": 1,
       "path": "infrastructure/deployment/_index.md",
-      "tokens": 240,
+      "tokens": 150,
       "type": "summary"
     },
     {
-      "importance": 50,
+      "importance": 55,
       "path": "infrastructure/deployment/vercel_deployment_status.md",
-      "tokens": 373,
+      "tokens": 152,
+      "type": "context"
+    },
+    {
+      "importance": 50,
+      "path": "development/build_system/context.md",
+      "tokens": 21,
+      "type": "context"
+    },
+    {
+      "importance": 50,
+      "path": "development/build_system/local_build_workarounds.md",
+      "tokens": 154,
+      "type": "context"
+    },
+    {
+      "importance": 50,
+      "path": "development/configuration/booking_system_configuration.md",
+      "tokens": 246,
+      "type": "context"
+    },
+    {
+      "importance": 50,
+      "path": "development/configuration/context.md",
+      "tokens": 43,
+      "type": "context"
+    },
+    {
+      "importance": 50,
+      "path": "development/context.md",
+      "tokens": 72,
       "type": "context"
     }
   ],
-  "generated_at": "2026-03-22T20:12:11.875Z",
+  "generated_at": "2026-03-22T20:32:46.614Z",
   "lane_tokens": {
-    "contexts": 373,
+    "contexts": 688,
     "stubs": 0,
-    "summaries": 630
+    "summaries": 1721
   },
-  "source_fingerprint": "d9ac951379622774d276dd8599006fd26621f44cb2c420aaa12364a759279d1f",
-  "total_tokens": 1003,
+  "source_fingerprint": "1161478caf6751010fd3b46c4b789e4b8e82c161f95edc3b0d3f8aa3319141cd",
+  "total_tokens": 2409,
   "version": 1
 }

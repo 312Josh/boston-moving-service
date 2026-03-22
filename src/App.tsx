@@ -2,24 +2,24 @@ import { Link, Route, Routes, useParams } from 'react-router-dom'
 import { articlePages, bookingUrl, phoneHref, phoneNumber, address, servicePages } from './content/site'
 
 const trustPoints = [
-  'Veteran owned, licensed, and insured',
-  'Affordable rates across Boston and the North Shore',
-  'Apartment, house, office, and specialty moves',
-  'Fast, friendly, and effective moving crews',
+  'Veteran-owned local mover serving Boston and the North Shore',
+  'Call now: (978) 818-4555',
+  'Licensed and insured for residential, office, and specialty moves',
+  'Free in-home and phone estimates',
 ]
 
 const whyChooseUs = [
   {
-    title: 'Professional movers with a service-first approach',
-    body: 'The live brand leans on seasoned, reliable movers and a pleasant relocation experience from start to finish. This version keeps that tone, but presents it with tighter conversion structure and clearer hierarchy.',
+    title: 'Professional movers who treat your move with care',
+    body: 'Our crews show up ready to work, protect your furniture, and keep the day moving without the drama people expect from a bad moving company.',
   },
   {
-    title: 'Affordable estimates with more realistic planning',
-    body: 'Free in-home estimates and phone estimates are part of the current offer. The site now frames that as a conversion path with clearer decision points and better pre-qualification.',
+    title: 'Clear estimates before move day',
+    body: 'Free in-home estimates and phone estimates help you understand timing, cost, and access issues before the truck arrives.',
   },
   {
-    title: 'Coverage built for Boston, Metro Boston, and the North Shore',
-    body: 'The brand already emphasizes Boston and North Shore reach. This version sharpens that into an explicit service-area and move-type structure that reads like an actual operator, not a generic lead form.',
+    title: 'Reliable coverage across Boston and the North Shore',
+    body: 'From tight Boston walk-ups to larger North Shore moves, we handle the local conditions that slow down unprepared crews.',
   },
 ]
 
@@ -57,12 +57,12 @@ const faqItems = [
   {
     question: 'What areas do you serve?',
     answer:
-      'The current brand focus is Boston, Metro Boston, Peabody, Salem, and the North Shore. This site keeps that service geography intact and makes it easier to scan.',
+      'We serve Boston, Metro Boston, Peabody, Salem, and communities across the North Shore.',
   },
   {
     question: 'Why book a consultation if there is already a quote request form?',
     answer:
-      'Some leads are better handled asynchronously. Others move faster with a direct estimate conversation. The site supports both, which is what competent operations tend to do.',
+      'The quote form lets you send details anytime. Booking a call is the faster option if you want to talk through the move, ask questions, and get estimate guidance directly.',
   },
 ]
 
@@ -76,7 +76,7 @@ function Header() {
       <div className="container nav-row">
         <Link to="/">
           <p className="brand-kicker">Boston Moving Service</p>
-          <p className="brand-title">Boston & North Shore best moving company</p>
+          <p className="brand-title">Veteran-owned Boston & North Shore movers</p>
         </Link>
         <nav className="nav-links">
           <a href="#services">Services</a>
@@ -84,7 +84,7 @@ function Header() {
           <a href="#areas">Areas</a>
           <a href="#faq">FAQ</a>
         </nav>
-        <a className="primary-cta" href="#booking">Book an Estimate Call</a>
+        <a className="primary-cta" href={phoneHref}>Call (978) 818-4555</a>
       </div>
     </header>
   )
@@ -97,16 +97,15 @@ function HomePage() {
         <div className="hero-backdrop" aria-hidden="true" />
         <div className="container hero-grid">
           <div>
-            <p className="eyebrow">Veteran owned movers serving Boston and the North Shore</p>
-            <h1>Fast, friendly, effective moving for Boston-area homes and businesses</h1>
+            <p className="eyebrow">Veteran-owned movers serving Boston and the North Shore</p>
+            <h1>Veteran-owned Boston movers for homes, offices, and specialty moves</h1>
             <p className="hero-copy">
-              Boston Moving Service is a licensed and insured professional moving company with seasoned movers,
-              affordable rates, and a straightforward goal: make the relocation experience easier from start to finish.
-              This build keeps the core live-site positioning, then tightens the structure around conversion.
+              Boston Moving Service is a veteran-owned, licensed, and insured moving company with experienced crews,
+              affordable rates, and straightforward service from estimate through move day.
             </p>
             <div className="hero-actions">
-              <a className="primary-cta" href="#booking">Book an Estimate Call</a>
-              <a className="secondary-cta" href="#services">Explore Moving Services</a>
+              <a className="primary-cta" href={phoneHref}>Call (978) 818-4555</a>
+              <a className="secondary-cta" href="#booking">Book a Free Estimate</a>
             </div>
             <div className="trust-strip">
               {trustPoints.map((point) => <span key={point}>{point}</span>)}
@@ -115,12 +114,12 @@ function HomePage() {
 
           <aside className="hero-panel">
             <p className="panel-kicker">Contact</p>
-            <h2>Book a move with people who do this for a living.</h2>
+            <h2>Call the veteran-owned crew and get your estimate started.</h2>
             <div className="panel-card-grid">
-              <article><strong>Call Now</strong><span>{phoneNumber}</span></article>
+              <article><strong>Call Now</strong><a className="tap-call" href={phoneHref}>{phoneNumber}</a></article>
+              <article><strong>Veteran-Owned</strong><span>Local, licensed, and insured moving company</span></article>
               <article><strong>Coverage</strong><span>Boston, Metro Boston, Peabody, Salem, North Shore</span></article>
               <article><strong>Estimates</strong><span>Free in-home estimates and phone estimates</span></article>
-              <article><strong>Move Types</strong><span>Residential, office, commercial, hot tub, hoisting</span></article>
             </div>
           </aside>
         </div>
@@ -130,13 +129,13 @@ function HomePage() {
         <div className="container">
           <div className="section-heading">
             <p className="eyebrow">Moving Services</p>
-            <h2>Structured around the services already present in the live brand.</h2>
-            <p>Apartment moves, house moves, office relocations, commercial work, specialty moves, and estimate-first conversion paths.</p>
+            <h2>Moving services for homes, offices, and specialty jobs.</h2>
+            <p>Apartment moves, house moves, office relocations, commercial work, and specialty moving support across Boston and the North Shore.</p>
           </div>
           <div className="service-grid">
             {servicePages.map((service) => (
               <article key={service.slug} className="service-card">
-                <p className="card-eyebrow">Service Page</p>
+                <p className="card-eyebrow">Moving Service</p>
                 <h3>{service.title}</h3>
                 <p>{service.intro}</p>
                 <Link className="text-link" to={`/services/${service.slug}`}>Read more</Link>
@@ -150,8 +149,8 @@ function HomePage() {
         <div className="container why-grid">
           <div className="section-heading compact-heading">
             <p className="eyebrow">Why Boston Moving Service</p>
-            <h2>Current brand cues, rebuilt into a stronger prospect flow.</h2>
-            <p>The inspiration site has the right raw ingredients. This version makes the pitch easier to trust and easier to act on.</p>
+            <h2>Why customers call Boston Moving Service.</h2>
+            <p>People choose us for experienced crews, practical planning, and moves that stay organized from start to finish.</p>
           </div>
           <div className="why-list">
             {whyChooseUs.map((item) => (
@@ -168,8 +167,8 @@ function HomePage() {
         <div className="container process-grid">
           <div className="section-heading compact-heading">
             <p className="eyebrow">How It Works</p>
-            <h2>A cleaner estimate-to-booking path.</h2>
-            <p>The live site mentions free in-home estimates and phone estimates. Here that offer is organized into a more usable flow.</p>
+            <h2>Simple steps from estimate to move day.</h2>
+            <p>Tell us about the job, choose the right estimate option, and lock in a plan that fits your move.</p>
           </div>
           <div className="process-list">
             {processSteps.map((item) => (
@@ -190,7 +189,7 @@ function HomePage() {
           <div className="section-heading compact-heading">
             <p className="eyebrow">Service Area</p>
             <h2>Boston, Metro Boston, and the North Shore.</h2>
-            <p>Based on the live site positioning, with the coverage made more visible and more believable in the sales flow.</p>
+            <p>We handle local and regional moves throughout Greater Boston and North Shore communities.</p>
           </div>
           <div className="area-card">
             {coverageAreas.map((area) => <span key={area}>{area}</span>)}
@@ -204,15 +203,14 @@ function HomePage() {
             <p className="eyebrow">Request a Quote</p>
             <h2>Send the move details before the estimate.</h2>
             <p>
-              The current website leans on calling for estimates. This version adds a stronger intake layer so the company
-              can qualify the job before the conversation and still preserve the direct-call path.
+              Send the key move details now so we can review the job, understand access issues, and prepare for a useful estimate conversation.
             </p>
             <p className="note-line">Call directly at <a className="tap-call" href={phoneHref}>{phoneNumber}</a>.</p>
           </div>
           <form className="contact-card inquiry-form" action="mailto:info@bmoving.com" method="post" encType="text/plain">
             <div className="form-intro form-body">
               <p className="card-eyebrow">Move Request</p>
-              <p className="form-intro-copy">Enough detail for a useful estimate. Not an essay. Just the parts that matter.</p>
+              <p className="form-intro-copy">Share the key details so we can prepare a useful estimate.</p>
             </div>
             <div className="form-grid">
               <label>
@@ -274,14 +272,14 @@ function HomePage() {
           <div>
             <p className="eyebrow">Estimate Booking</p>
             <h2>Schedule a move estimate conversation.</h2>
-            <p>Use the booking option below to request time for a phone estimate, planning call, or next-step conversation.</p>
+            <p>Use the booking calendar below to request time for a phone estimate, planning call, or next-step conversation.</p>
             <p className="note-line">Prefer direct contact. <a className="tap-call" href={phoneHref}>{phoneNumber}</a></p>
           </div>
           <div className="booking-placeholder">
             <div className="booking-shell">
               <p className="card-eyebrow">Book an Estimate</p>
-              <h3>Open the estimate calendar</h3>
-              <p>The #booking anchor and embedded calendar flow remain intact, with a direct fallback link if needed.</p>
+              <h3>Book your free estimate</h3>
+              <p>Pick a time that works for you and request a phone estimate or planning call.</p>
               <iframe src={bookingUrl} title="Book an estimate call" className="booking-frame" loading="lazy" />
               <a className="secondary-cta" href={bookingUrl} target="_blank" rel="noreferrer">Open booking in new tab</a>
             </div>
@@ -293,7 +291,7 @@ function HomePage() {
         <div className="container faq-grid">
           <div className="section-heading compact-heading">
             <p className="eyebrow">FAQ</p>
-            <h2>Common questions, answered without the usual moving-company nonsense.</h2>
+            <h2>Common moving questions.</h2>
           </div>
           <div className="faq-list">
             {faqItems.map((item) => (
@@ -310,16 +308,16 @@ function HomePage() {
         <div className="container">
           <div className="section-heading">
             <p className="eyebrow">Moving Advice</p>
-            <h2>Useful content modeled after the live site’s blog footprint.</h2>
-            <p>The current site already uses educational moving content. This version keeps that intent but rewrites it into cleaner, more trustworthy pages.</p>
+            <h2>Helpful moving tips for Boston-area customers.</h2>
+            <p>Read practical advice for planning your move, preparing your building, and avoiding common delays on moving day.</p>
           </div>
           <div className="service-grid">
             {articlePages.map((article) => (
               <article key={article.slug} className="service-card">
-                <p className="card-eyebrow">Article</p>
+                <p className="card-eyebrow">Moving Tip</p>
                 <h3>{article.title}</h3>
                 <p>{article.intro}</p>
-                <Link className="text-link" to={`/articles/${article.slug}`}>Read article</Link>
+                <Link className="text-link" to={`/articles/${article.slug}`}>Read tip</Link>
               </article>
             ))}
           </div>
@@ -334,7 +332,7 @@ function ServicePageInner() {
   const page = servicePages.find((item) => item.slug === slug)
   if (!page) return <NotFound />
   return (
-    <section className="section"><div className="container prose-page"><p className="eyebrow">Service Page</p><h1>{page.title}</h1><p className="lead">{page.intro}</p><ul>{page.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul><a className="primary-cta" href={bookingUrl}>Book an Estimate Call</a></div></section>
+    <section className="section"><div className="container prose-page"><p className="eyebrow">Moving Service</p><h1>{page.title}</h1><p className="lead">{page.intro}</p><ul>{page.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul><a className="primary-cta" href={bookingUrl}>Book a Free Estimate</a></div></section>
   )
 }
 
@@ -343,7 +341,7 @@ function ArticlePageInner() {
   const page = articlePages.find((item) => item.slug === slug)
   if (!page) return <NotFound />
   return (
-    <section className="section"><div className="container prose-page"><p className="eyebrow">Article</p><h1>{page.title}</h1><p className="lead">{page.intro}</p>{page.sections.map((section) => <div key={section.heading} className="article-block"><h2>{section.heading}</h2><p>{section.body}</p></div>)}<a className="primary-cta" href={bookingUrl}>Book an Estimate Call</a></div></section>
+    <section className="section"><div className="container prose-page"><p className="eyebrow">Moving Tip</p><h1>{page.title}</h1><p className="lead">{page.intro}</p>{page.sections.map((section) => <div key={section.heading} className="article-block"><h2>{section.heading}</h2><p>{section.body}</p></div>)}<a className="primary-cta" href={bookingUrl}>Book a Free Estimate</a></div></section>
   )
 }
 

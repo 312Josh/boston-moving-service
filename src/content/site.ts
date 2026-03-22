@@ -1,4 +1,4 @@
-export const bookingUrl = 'https://cal.com/josh-mellender-f4rrsl'
+export const bookingUrl = 'https://cal.com/cogrowai/estimate'
 export const phoneNumber = '(978) 818-4555'
 export const phoneHref = 'tel:19788184555'
 export const address = 'Boston & North Shore, MA · Licensed and insured movers'

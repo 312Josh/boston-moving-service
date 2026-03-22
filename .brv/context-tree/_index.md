@@ -1,24 +1,41 @@
 ---
-children_hash: be57bed2dca5b8df172b4cdf25a3918299fc26cb384ed183f212e87bfa7508c9
-compression_ratio: 0.7834645669291339
+children_hash: 089ceae8c869e82c0c3d4d1865978a9e4062c43f7b4876ded591eca2e07e826a
+compression_ratio: 0.8211829436038515
 condensation_order: 3
-covers: [infrastructure/_index.md]
-covers_token_total: 254
+covers: [development/_index.md, infrastructure/_index.md]
+covers_token_total: 727
 summary_level: d3
-token_count: 199
+token_count: 597
 type: summary
 ---
-# Infrastructure: Deployment Summary
+# Project Structural Summary (Level d3)
 
-This domain defines the Vite React SPA deployment architecture and current readiness status for Vercel.
+This structural overview synthesizes the development and infrastructure domains for the Boston Moving Service platform, focusing on environment management, centralized configuration, and deployment state.
 
-### Core Architecture & Configuration
-*   **Platform**: Vercel (SPA mode) targeting `dist/` artifacts.
-*   **Routing**: `vercel.json` enforces SPA routing by rewriting all paths to `/index.html`.
-*   **Toolchain**: Managed via `vite.config.ts`, `package.json`, and Vercel CLI.
+### Development Domain
+The development domain manages the local environment, build systems, and application-level settings.
 
-### Status & Critical Blockers
-*   **Code State**: Fully validated via `tsc` and linting; ready for production build.
-*   **Infrastructure Issues**: Deployments are currently blocked by local keychain errors (code -50) and API connectivity failures (`api.vercel.com`).
+*   **Build System & Environment Isolation**: 
+    *   **Architectural Decision**: To resolve macOS-specific Vite segfaults (SecItemCopyMatching), the system implements environment isolation using `env -i`.
+    *   **Key Patterns**: Standardized build-command workarounds are used to clear inherited shell environments during local builds.
+    *   **Drill-down**: See `development/build_system/_index.md` and `development/build_system/local_build_workarounds.md`.
 
-**Reference**: See `vercel_deployment_status.md` for detailed configuration rules and error diagnostics.
+*   **Centralized Application Configuration**:
+    *   **Key Fact**: The primary integration point is the `bookingUrl`, migrated to `https://cal.com/cogrowai/estimate`.
+    *   **Implementation**: Configuration is defined in `src/content/site.ts` and consumed by components in `src/App.tsx`.
+    *   **Enforcement**: All redirects, iframes, and `#booking` anchors must use the centralized `bookingUrl`; legacy `cal.com/josh-mellender` links are deprecated.
+    *   **Drill-down**: See `development/configuration/_index.md` and `development/configuration/booking_system_configuration.md`.
+
+### Infrastructure Domain
+The infrastructure domain tracks the deployment lifecycle and production environment stability.
+
+*   **Vercel Deployment & Service Routing**:
+    *   **Production URL**: `https://boston-moving-service-site.vercel.app`
+    *   **Deployment ID**: `https://boston-moving-service-site-fq9jpixy4.vercel.app`
+    *   **External Integrations**: Core services are routed to the Cal.com estimate endpoint.
+    *   **Status**: Active production state as of 2026-03-22.
+    *   **Drill-down**: See `infrastructure/deployment/vercel_deployment_status.md`.
+
+### Relationships & Patterns
+*   **Configuration to Infrastructure**: The `bookingUrl` defined in `development/configuration` serves as the primary external integration endpoint tracked in `infrastructure/deployment`.
+*   **Environment Constraints**: Local development requires specific shell environment clearing (`env -i`) to maintain parity with the stable Vercel production environment.
