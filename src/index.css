@@ -8,7 +8,7 @@
   background:
     radial-gradient(circle at top left, rgba(180, 35, 56, 0.14), transparent 32%),
     radial-gradient(circle at top right, rgba(127, 29, 29, 0.1), transparent 28%),
-    linear-gradient(180deg, #f9f5f5 0%, #f3eded 42%, #ffffff 100%);
+    linear-gradient(180deg, #fafafa 0%, #f5f5f5 42%, #ffffff 100%);
   color-scheme: light;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -23,7 +23,7 @@ a { color: inherit; text-decoration: none; }
 button, input, select, textarea { font: inherit; }
 .site-shell { min-height: 100vh; }
 .container { width: min(1180px, calc(100% - 2rem)); margin: 0 auto; }
-.site-header { position: sticky; top: 0; z-index: 20; backdrop-filter: blur(16px); background: rgba(252,249,249,0.92); border-bottom: 1px solid rgba(127,29,29,0.12); }
+.site-header { position: sticky; top: 0; z-index: 20; backdrop-filter: blur(16px); background: rgba(255,255,255,0.92); border-bottom: 1px solid rgba(127,29,29,0.12); }
 .topbar, .nav-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
 .topbar { padding: 0.8rem 0; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(24,17,19,0.64); }
 .topbar a { color: #6b1020; font-weight: 700; }
@@ -41,7 +41,7 @@ button, input, select, textarea { font: inherit; }
 .secondary-cta { border: 1px solid rgba(127,29,29,0.18); color: #7f1d1d; background: rgba(255,255,255,0.88); }
 .full-width { width: 100%; }
 .hero-section { position: relative; overflow: hidden; padding: 5.5rem 0 3rem; }
-.hero-backdrop { position: absolute; inset: 0; background: linear-gradient(120deg, rgba(185,28,28,0.12) 0%, transparent 36%), linear-gradient(180deg, rgba(127,29,29,0.06), transparent 35%); mask-image: linear-gradient(180deg, black, transparent 88%); }
+.hero-backdrop { position: absolute; inset: 0; background: linear-gradient(120deg, rgba(0,0,0,0.03) 0%, transparent 36%), linear-gradient(180deg, rgba(0,0,0,0.02), transparent 35%); mask-image: linear-gradient(180deg, black, transparent 88%); }
 .hero-grid, .why-grid, .process-grid, .area-grid, .faq-grid, .final-cta-grid { display: grid; gap: 2rem; }
 .hero-grid { grid-template-columns: 1.2fr 0.8fr; align-items: start; }
 .hero-section h1, .section-heading h2, .final-cta h2, .hero-panel h2 { margin: 0; font-family: 'Manrope', sans-serif; font-weight: 800; line-height: 0.95; letter-spacing: -0.04em; color: #181113; }
@@ -57,10 +57,10 @@ button, input, select, textarea { font: inherit; }
 .hero-panel h2 { font-size: 2rem; margin-top: 0.8rem; }
 .hero-panel p { line-height: 1.75; }
 .panel-card-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem; margin-top: 1.6rem; }
-.panel-card-grid article { display: flex; flex-direction: column; gap: 0.35rem; border-radius: 22px; padding: 1rem; background: rgba(185,28,28,0.06); }
+.panel-card-grid article { display: flex; flex-direction: column; gap: 0.35rem; border-radius: 22px; padding: 1rem; background: rgba(0,0,0,0.03); }
 .panel-card-grid strong, .service-card h3, .why-card h3, .process-card h3, .faq-card h3, .booking-shell h3 { font-family: 'Manrope', sans-serif; font-weight: 700; color: #181113; }
 .section { padding: 5.5rem 0; }
-.muted-section { background: rgba(185,28,28,0.04); }
+.muted-section { background: rgba(0,0,0,0.02); }
 .section-heading { max-width: 44rem; margin-bottom: 2.5rem; }
 .section-heading h2, .final-cta h2 { font-size: clamp(2.3rem, 4.2vw, 4rem); margin-top: 0.75rem; }
 .section-heading p, .final-cta p { font-size: 1.02rem; line-height: 1.75; margin-top: 1rem; }
@@ -75,7 +75,7 @@ button, input, select, textarea { font: inherit; }
 .process-card span, .seo-card span { font-family: 'Manrope', sans-serif; font-size: 2rem; font-weight: 800; color: #b42338; }
 .area-card { display: flex; flex-wrap: wrap; gap: 0.85rem; padding: 2rem; border-radius: 32px; }
 .booking-placeholder { display: flex; }
-.booking-shell { width: 100%; min-height: 280px; border-radius: 30px; padding: 2rem; display: flex; flex-direction: column; justify-content: center; gap: 0.8rem; background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(255,233,230,0.96)); }
+.booking-shell { width: 100%; min-height: 280px; border-radius: 30px; padding: 2rem; display: flex; flex-direction: column; justify-content: center; gap: 0.8rem; background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(250,250,250,0.96)); }
 .note-line { margin-top: 1rem; }
 .faq-grid { align-items: start; }
 .seo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -110,7 +110,7 @@ button, input, select, textarea { font: inherit; }
 }
 
 .inquiry-form {
-  background: linear-gradient(180deg, rgba(255,255,255,0.99), rgba(255,236,232,0.96));
+  background: linear-gradient(180deg, rgba(255,255,255,0.99), rgba(250,250,250,0.96));
   border: 1px solid rgba(127,29,29,0.08);
   border-radius: 42px;
   box-shadow: 0 24px 60px rgba(86,15,26,0.07);
@@ -182,7 +182,7 @@ button, input, select, textarea { font: inherit; }
 }
 
 .booking-shell-light {
-  background: linear-gradient(180deg, #fff6f4, #fee4e2);
+  background: linear-gradient(180deg, #fafafa, #f0f0f0);
 }
 
 .booking-feature-list {
