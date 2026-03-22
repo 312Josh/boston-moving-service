@@ -1,4 +1,5 @@
-import { FormEvent, useState } from 'react'
+import { useState } from 'react'
+import type { FormEvent } from 'react'
 import { Link, Route, Routes, useParams } from 'react-router-dom'
 import { articlePages, bookingUrl, phoneHref, phoneNumber, address, servicePages } from './content/site'
 
