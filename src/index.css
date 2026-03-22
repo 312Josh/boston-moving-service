@@ -8,7 +8,7 @@
   background:
     radial-gradient(circle at top left, rgba(216, 38, 61, 0.2), transparent 32%),
     radial-gradient(circle at top right, rgba(127, 29, 29, 0.1), transparent 28%),
-    linear-gradient(180deg, #fff5f5 0%, #fee2e2 42%, #ffffff 100%);
+    linear-gradient(180deg, #fef2f2 0%, #fee2e2 42%, #ffffff 100%);
   color-scheme: light;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
