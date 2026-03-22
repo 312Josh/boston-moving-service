@@ -1,3 +1,4 @@
+import { FormEvent, useState } from 'react'
 import { Link, Route, Routes, useParams } from 'react-router-dom'
 import { articlePages, bookingUrl, phoneHref, phoneNumber, address, servicePages } from './content/site'
 
@@ -91,6 +92,19 @@ function Header() {
 }
 
 function HomePage() {
+  const [isDemoSubmitted, setIsDemoSubmitted] = useState(false)
+  const [submittedName, setSubmittedName] = useState('')
+
+  const handleDemoSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    const form = event.currentTarget
+    const data = new FormData(form)
+    const nameValue = data.get('name')
+    setSubmittedName(typeof nameValue === 'string' ? nameValue.trim() : '')
+    setIsDemoSubmitted(true)
+    form.reset()
+  }
+
   return (
     <>
       <section className="hero-section">
@@ -207,7 +221,7 @@ function HomePage() {
             </p>
             <p className="note-line">Call directly at <a className="tap-call" href={phoneHref}>{phoneNumber}</a>.</p>
           </div>
-          <form className="contact-card inquiry-form" action="mailto:info@bmoving.com" method="post" encType="text/plain">
+          <form className="contact-card inquiry-form" onSubmit={handleDemoSubmit}>
             <div className="form-intro form-body">
               <p className="card-eyebrow">Move Request</p>
               <p className="form-intro-copy">Share the key details so we can prepare a useful estimate.</p>
@@ -263,6 +277,11 @@ function HomePage() {
               <textarea name="details" rows={6} placeholder="Include large furniture, stairs, elevators, parking constraints, fragile items, and anything else likely to affect timing or cost." />
             </label>
             <button type="submit" className="primary-cta full-width">Send Quote Request</button>
+            {isDemoSubmitted && (
+              <p className="full-span note-line" role="status">
+                Demo request saved locally{submittedName ? ` for ${submittedName}` : ''}. Call {phoneNumber} to confirm scheduling.
+              </p>
+            )}
           </form>
         </div>
       </section>
