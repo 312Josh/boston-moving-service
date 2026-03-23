@@ -4,8 +4,8 @@ import { Link, Route, Routes, useParams } from 'react-router-dom'
 import { articlePages, bookingUrl, phoneHref, phoneNumber, address, servicePages } from './content/site'
 
 const trustPoints = [
-  'Veteran-owned local mover serving Boston and the North Shore',
-  'Call now: (978) 818-4555',
+  'Veteran-Owned',
+  '67 Foster St, Peabody',
   'Licensed and insured for residential, office, and specialty moves',
   'Free in-home and phone estimates',
 ]
@@ -78,7 +78,7 @@ function Header() {
       <div className="container nav-row">
         <Link to="/">
           <p className="brand-kicker">Boston Moving Service</p>
-          <p className="brand-title">Veteran-owned Boston & North Shore movers</p>
+          <p className="brand-title">Veteran-Owned Boston & North Shore Movers</p>
         </Link>
         <nav className="nav-links">
           <a href="#services">Services</a>
@@ -112,14 +112,16 @@ function HomePage() {
         <div className="hero-backdrop" aria-hidden="true" />
         <div className="container hero-grid">
           <div>
-            <p className="eyebrow">Veteran-owned movers serving Boston and the North Shore</p>
-            <h1>Veteran-owned Boston movers for homes, offices, and specialty moves</h1>
+            <p className="hero-veteran">Veteran-Owned</p>
+            <p className="hero-brand">Boston Moving Service</p>
+            <h1>Boston & North Shore movers for homes, offices, and specialty moves</h1>
             <p className="hero-copy">
               Boston Moving Service is a veteran-owned, licensed, and insured moving company with experienced crews,
               affordable rates, and straightforward service from estimate through move day.
             </p>
+            <p className="hero-address">67 Foster St, Peabody</p>
             <div className="hero-actions">
-              <a className="primary-cta" href={phoneHref}>Call (978) 818-4555</a>
+              <a className="hero-phone" href={phoneHref}>{phoneNumber}</a>
               <a className="secondary-cta" href="#booking">Book a Free Estimate</a>
             </div>
             <div className="trust-strip">
@@ -280,7 +282,7 @@ function HomePage() {
             <button type="submit" className="primary-cta full-width">Send Quote Request</button>
             {isDemoSubmitted && (
               <p className="full-span note-line" role="status">
-                Demo request saved locally{submittedName ? ` for ${submittedName}` : ''}. Call {phoneNumber} to confirm scheduling.
+                Thanks{submittedName ? `, ${submittedName}` : ''}. Your quote request was received. Call {phoneNumber} for immediate help.
               </p>
             )}
           </form>
