@@ -77,6 +77,7 @@ function Header() {
       </div>
       <div className="container nav-row">
         <Link to="/">
+          <img src="/boston-moving-logo.jpg" alt="Boston Moving Service" style={{height: "48px", borderRadius: "6px", marginBottom: "4px"}} />
           <p className="brand-kicker">Boston Moving Service</p>
           <p className="brand-title">Veteran-Owned Boston & North Shore Movers</p>
         </Link>
@@ -114,6 +115,7 @@ function HomePage() {
           <div>
             <p className="hero-veteran">Veteran-Owned</p>
             <p className="hero-brand">Boston Moving Service</p>
+            <img src="/boston-moving-logo.jpg" alt="Boston Moving Service" style={{height: "64px", borderRadius: "8px", marginBottom: "8px"}} />
             <h1>Boston & North Shore movers for homes, offices, and specialty moves</h1>
             <p className="hero-copy">
               Boston Moving Service is a veteran-owned, licensed, and insured moving company with experienced crews,
