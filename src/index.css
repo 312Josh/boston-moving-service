@@ -223,3 +223,44 @@ button, input, select, textarea { font: inherit; }
   padding-left: 1.15rem;
   padding-right: 1.15rem;
 }
+
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  text-decoration: none;
+}
+
+.brand-logo {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.14);
+}
+
+.hero-brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.hero-brand-logo {
+  width: 104px;
+  height: 104px;
+  object-fit: contain;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.18);
+}
+
+.hero-brand-name {
+  margin: 0.2rem 0 0;
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: #111827;
+}
